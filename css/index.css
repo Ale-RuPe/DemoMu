@@ -1,0 +1,25 @@
+body{
+  font-size: 12px;
+  /*opacity: 0.5;*/
+  /*background: url("/assets/bg1.jpg") no-repeat center top;*/
+  /*background-size: 100%;*/
+  /*background-size: cover;*/
+}
+.parallax-container {
+    height: 50;
+    position: relative;
+}
+/**
+  * Donde se encuentra el formulario
+  */
+#Contenedor{
+  width: 400px;
+  margin: 50px auto;
+  background: #000000;
+  opacity: 0.7 !important;
+  box-shadow:-9px 9px 38px 4px  #000000f1;
+  height: 360px;
+  border-radius:8px;
+  padding: 0px 9px 0px 9px;
+  margin-top: 10%;
+}
