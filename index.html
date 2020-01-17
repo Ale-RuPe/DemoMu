@@ -5,100 +5,142 @@
 	<meta charset="UTF-8">
 	<!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	
-    <div class="parallax-container">
-		<div class="parallax"><img src="assets/nature.jpg"></div>
+		<ul id="slide-out" class="sidenav">
+			<li>
+				<div class="user-view">
+					<div class="background">
+					<img src="assets/nature.jpg"><br>
+					</div>
+					<a><img class="circle" src="assets/nature.jpg">
+					<span class="white-text name"><h5>DEMO-MULESOFT</h5><br></span>
+					</a>
+					<!--<a href="#name"></a><span class="white-text name"><h5>SIG</h5></span></a>-->
+					<!--<a href="#email"><span class="white-text email">Ejemplo_SIG@gmail.com</span></a>-->
+				</div>
+				<li><a href="#!">Get Accounts</a></li>
+				<li><a href="#!">Get Account by Id</a></li>
+				<li><a href="#!">Create Account</a></li>
+				<li><a href="#!">Update Account</a></li>
+			</li>
+		</ul>
+		<a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+			<i data-target="slide-out" class="medium material-icons sidenav-trigger ">apps</i>
+		</a>
+	  
+			
+    
 
-      	<!--Form-->
-		<div id="Contenedor">
-			<div class="Icon">
-			  <span><i class="fas fa-user"></i></span>
-			</div>
-			<form name="FormEntrar" id="myform">
-			  <div data-toggle="validator"  id="formu" class="input-group input-group-lg">
-			    <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-user s-icon"></i></span>
-			    <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-envelope"></i></span>
-			    <input type="text" id="Correo" class="form-control" name="correo" placeholder="Email" aria-describedby="sizing-addon1" required>
-			  </div>
-			  <br>
-			  <div class="input-group input-group-lg">
-			    <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-lock s-icon"></i></span>
-			    <input type="password" id="pass" name="contra" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon1" required>
-			  </div>
-			  <br>
-			  <div class="section center-align">
-				<button id="login" class="btn btn-lg btn-primary btn-block btn-signin">Entrar</button>
-			  	<div class="opcioncontra"><a href="">Olvidaste tu contraseña?</a></div>
-			  </div>
+		<div class="row" id="postDIV">
+			<form class="col s6 push-s3 bl" id="contenedor">
+				<div class="row">
+					<div class="col s12 white" id="Title">
+						<div class="center-align flow-text">
+							Create Account
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="Name" type="text" class="validate">
+						<label for="Name">Account Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="BillingStreet" type="text" class="validate">
+						<label for="BillingStreet">Billing Street</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="BillingCity" type="text" class="validate">
+						<label for="BillingCity">BillingCity</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="BillingState" type="text" class="validate">
+						<label for="BillingState">Billing State</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="BillingCountry" type="text" class="validate">
+						<label for="BillingCountry">Billing Country</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="BillingPostalCode" type="text" class="validate">
+						<label for="BillingPostalCode">Billing PostalCode</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col s4 right">
+						<a class="waves-effect waves-light btn-large">Button<i class="material-icons left">send</i></a>
+					</div>
+				</div>
 			</form>
 		</div>
-    </div>
 
+		<div class="row" id="getDIV">
+			<form class="col s6 push-s3 bl" id="contenedor">
+				<div class="row">
+					<div class="col s12 white" id="Title">
+						<div class="center-align flow-text">
+							Create Account
+						</div>
+					</div>
+				</div>
 
-    <div class="section">
-      	<div class="container">
-			<div class="row">
-				<div class="col s4 push-s4 teal lighten-2 center-align"> <p>s12</p> </div>
-			</div>
-
-			<div class="row">
-			<form class="col s6 push-s3">
-			  <div class="row">
-			    <div class="input-field col s6">
-			      <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			      <label for="first_name">First Name</label>
-			    </div>
-			    <div class="input-field col s6">
-			      <input id="last_name" type="text" class="validate">
-			      <label for="last_name">Last Name</label>
-			    </div>
-			  </div>
-			  <div class="row">
-			    <div class="input-field col s12">
-			      <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-			      <label for="disabled">Disabled</label>
-			    </div>
-			  </div>
-			  <div class="row">
-			    <div class="input-field col s12">
-			      <input id="password" type="password" class="validate">
-			      <label for="password">Password</label>
-			    </div>
-			  </div>
-			  <div class="row">
-			    <div class="input-field col s12">
-			      <input id="email" type="email" class="validate">
-			      <label for="email">Email</label>
-			    </div>
-			  </div>
-			  <div class="row">
-			    <div class="col s12">
-			      This is an inline input field:
-			      <div class="input-field inline">
-			        <input id="email_inline" type="email" class="validate">
-			        <label for="email_inline">Email</label>
-			        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-			      </div>
-			    </div>
-			  </div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="Name" type="text" class="validate">
+						<label for="Name">Account Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="BillingStreet" type="text" class="validate">
+						<label for="BillingStreet">Billing Street</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="BillingCity" type="text" class="validate">
+						<label for="BillingCity">BillingCity</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="BillingState" type="text" class="validate">
+						<label for="BillingState">Billing State</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="BillingCountry" type="text" class="validate">
+						<label for="BillingCountry">Billing Country</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="BillingPostalCode" type="text" class="validate">
+						<label for="BillingPostalCode">Billing PostalCode</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col s4 right">
+						<a class="waves-effect waves-light btn-large">Button<i class="material-icons left">send</i></a>
+					</div>
+				</div>
 			</form>
-			</div>
+		</div>
 
-
+			<!--
 			<div class="row center-align">
 				<div class="col s12 m6 l3 teal lighten-2"> <p>s12 m6 l3</p> </div>
 				<div class="col s12 m6 l3 blue accent-3"> <p>s12 m6 l3</p> </div>
 				<div class="col s12 m6 l3 teal lighten-2"> <p>s12 m6 l3</p> </div>
 				<div class="col s12 m6 l3 blue accent-3"> <p>s12 m6 l3</p> </div>
 			</div>
-		</div>
-    </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="assets/nature.jpg"></div>
-    </div>
+			-->
+
 </body>
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.min.js"

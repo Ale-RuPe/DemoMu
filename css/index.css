@@ -1,7 +1,7 @@
 body{
   font-size: 12px;
   /*opacity: 0.5;*/
-  /*background: url("/assets/bg1.jpg") no-repeat center top;*/
+  background: url("/assets/nature.jpg") no-repeat center top;
   /*background-size: 100%;*/
   /*background-size: cover;*/
 }
@@ -9,17 +9,38 @@ body{
     height: 50;
     position: relative;
 }
+.container{
+  background: #860202;
+  opacity: 0.1;
+}
+i.medium {
+  color: #ffffff;
+}
 /**
   * Donde se encuentra el formulario
   */
-#Contenedor{
-  width: 400px;
-  margin: 50px auto;
-  background: #000000;
-  opacity: 0.7 !important;
-  box-shadow:-9px 9px 38px 4px  #000000f1;
-  height: 360px;
+#Title{
   border-radius:8px;
-  padding: 0px 9px 0px 9px;
-  margin-top: 10%;
+}
+#contenedor{
+  /*margin: 100px auto;*/
+  background: #ffffff;
+  opacity: 1 !important;
+  box-shadow:-9px 9px 38px 4px  #424242f1;
+  border-radius:8px;
+  margin-top: 5%;
+  /*padding: 0px 9px 0px 9px;
+  
+  */
+}
+
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
 }
