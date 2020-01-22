@@ -3,10 +3,15 @@
 <head>
 	<title>Demo Mule</title>
 	<meta charset="UTF-8">
-	<!-- Compiled and minified CSS -->
+	<!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- DataTables -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+	<!-- CSS INDEX -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 		<ul id="slide-out" class="sidenav">
@@ -21,20 +26,66 @@
 					<!--<a href="#name"></a><span class="white-text name"><h5>SIG</h5></span></a>-->
 					<!--<a href="#email"><span class="white-text email">Ejemplo_SIG@gmail.com</span></a>-->
 				</div>
-				<li><a href="#!">Get Accounts</a></li>
-				<li><a href="#!">Get Account by Id</a></li>
-				<li><a href="#!">Create Account</a></li>
-				<li><a href="#!">Update Account</a></li>
+				<li><a href="#!" id="getAccountsRef">Get Accounts</a></li>
+				<li><a href="#!" id="getAccountByIdRef">Get Account by Id</a></li>
+				<li><a href="#!" id="postAccountRef">Create Account</a></li>
+				<!--<li><a href="#!" id="putAccountRef">Update Account</a></li>-->
 			</li>
 		</ul>
 		<a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
 			<i data-target="slide-out" class="medium material-icons sidenav-trigger ">apps</i>
 		</a>
 	  
-			
-    
+		<!--Obtener Cuentas-->
+		<div class="row" id="getAccountsDIV">
+			<form class="col s3 push-s1 bl" id="getAccountsForm">
+				<div class="row">
+					<div class="col s12 white" id="Title">
+						<div class="center-align flow-text">
+							Get Accounts
+						</div><br>
+					</div>
 
-		<div class="row" id="postDIV">
+					<div class="col s12 center-align">
+						<a id="getAccountsBtn" class="waves-effect waves-light btn-large">Button<i class="material-icons right">send</i></a>
+					</div>
+				</div>
+			</form>	
+			<div class="col s6 push-s2 white" id="Title">
+				<div class="center-align" id="getAccountsTableDiv">	
+				</div>
+			</div>		
+		</div>
+
+		<!--Obtener Cuentas por Id-->
+		<div class="row" id="getAccountsByIdDIV">
+			<form class="col s3 push-s1 bl" id="contenedor">
+				<div class="row">
+					<div class="col s12 white" id="Title">
+						<div class="center-align flow-text">
+							Get Account by Id
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="idAccount" type="text" class="validate">
+						<label for="idAccount">Account Id</label>
+					</div>
+					<div class="col s6 center-align">
+						<a id="getAccountByIdBtn" class="waves-effect waves-light btn-large">Button<i class="material-icons right">send</i></a>
+					</div>
+				</div>
+			</form>
+			<div class="col s6 push-s2 white" id="Title">
+				<div class="center-align" id="getAccountByIdTableDiv">	
+				</div>
+			</div>	
+		</div>
+
+		<!-- Crear Cuentas -->
+		<div class="row" id="postAccountDIV">
 			<form class="col s6 push-s3 bl" id="contenedor">
 				<div class="row">
 					<div class="col s12 white" id="Title">
@@ -46,92 +97,45 @@
 
 				<div class="row">
 					<div class="input-field col s6">
-						<input id="Name" type="text" class="validate">
-						<label for="Name">Account Name</label>
+						<input id="NamePost" type="text" class="validate">
+						<label for="NamePost">Name</label>
 					</div>
 					<div class="input-field col s6">
-						<input id="BillingStreet" type="text" class="validate">
-						<label for="BillingStreet">Billing Street</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input id="BillingCity" type="text" class="validate">
-						<label for="BillingCity">BillingCity</label>
-					</div>
-					<div class="input-field col s6">
-						<input id="BillingState" type="text" class="validate">
-						<label for="BillingState">Billing State</label>
+						<input id="IndustryPost" type="text" class="validate">
+						<label for="IndustryPost">Industry</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s6">
-						<input id="BillingCountry" type="text" class="validate">
-						<label for="BillingCountry">Billing Country</label>
+						<select id="ratingSelect">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="Cold">Cold</option>
+							<option value="Warm">Warm</option>
+							<option value="Hot">Hot</option>
+						</select>
+						<label>Rating</label>
 					</div>
 					<div class="input-field col s6">
-						<input id="BillingPostalCode" type="text" class="validate">
-						<label for="BillingPostalCode">Billing PostalCode</label>
+						<select id="activeSelect">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select>
+						<label>Active</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="TypePost" type="text" class="validate">
+						<label for="TypePost">Type</label>
+					</div>
+					<div class="col s6 center-align">
+						<a id="postAccountsBtn" class="waves-effect waves-light btn-large">Button<i class="material-icons right">send</i></a>
 					</div>
 				</div>
 				
-				<div class="row">
-					<div class="col s4 right">
-						<a class="waves-effect waves-light btn-large">Button<i class="material-icons left">send</i></a>
-					</div>
-				</div>
 			</form>
 		</div>
-
-		<div class="row" id="getDIV">
-			<form class="col s6 push-s3 bl" id="contenedor">
-				<div class="row">
-					<div class="col s12 white" id="Title">
-						<div class="center-align flow-text">
-							Create Account
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="input-field col s6">
-						<input id="Name" type="text" class="validate">
-						<label for="Name">Account Name</label>
-					</div>
-					<div class="input-field col s6">
-						<input id="BillingStreet" type="text" class="validate">
-						<label for="BillingStreet">Billing Street</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input id="BillingCity" type="text" class="validate">
-						<label for="BillingCity">BillingCity</label>
-					</div>
-					<div class="input-field col s6">
-						<input id="BillingState" type="text" class="validate">
-						<label for="BillingState">Billing State</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input id="BillingCountry" type="text" class="validate">
-						<label for="BillingCountry">Billing Country</label>
-					</div>
-					<div class="input-field col s6">
-						<input id="BillingPostalCode" type="text" class="validate">
-						<label for="BillingPostalCode">Billing PostalCode</label>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col s4 right">
-						<a class="waves-effect waves-light btn-large">Button<i class="material-icons left">send</i></a>
-					</div>
-				</div>
-			</form>
-		</div>
-
 			<!--
 			<div class="row center-align">
 				<div class="col s12 m6 l3 teal lighten-2"> <p>s12 m6 l3</p> </div>
@@ -147,7 +151,11 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		crossorigin="anonymous">
 	</script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- Materialize -->
+	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	
+	<!-- Index JS -->
     <script type="text/javascript" src="js/index.js"></script>
 </html>

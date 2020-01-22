@@ -5,10 +5,6 @@ body{
   /*background-size: 100%;*/
   /*background-size: cover;*/
 }
-.parallax-container {
-    height: 50;
-    position: relative;
-}
 .container{
   background: #860202;
   opacity: 0.1;
@@ -28,10 +24,21 @@ i.medium {
   opacity: 1 !important;
   box-shadow:-9px 9px 38px 4px  #424242f1;
   border-radius:8px;
-  margin-top: 5%;
+  margin-top: 0%;
   /*padding: 0px 9px 0px 9px;
   
   */
+}
+
+#getAccountsForm{
+  /*margin: 100px auto;*/
+  background: #ffffff;
+  opacity: 0.95 !important;
+  box-shadow:-9px 9px 38px 4px  #424242f1;
+  border-radius:8px;
+  margin-top: 0%;
+  /*padding: 0px 20% 0px 20%;*/
+ 
 }
 
 
